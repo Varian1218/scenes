@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
@@ -9,7 +10,7 @@ namespace Scenes
     {
         private readonly Dictionary<string, Type> _types = new();
 
-        public void Add<TInterface, TClass>()
+        public void Add<TInterface, TClass>() where TClass : MonoBehaviour, TInterface
         {
             _types.Add(GetHash<TInterface>(), typeof(TClass));
         }

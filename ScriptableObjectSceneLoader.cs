@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Scenes
 {
+    [CreateAssetMenu(menuName = "Scenes/Scene Loader", fileName = "Scene Loader", order = 1)]
     public class ScriptableObjectSceneLoader : ScriptableObject, ISceneLoader
     {
         private ISceneLoader _impl;
